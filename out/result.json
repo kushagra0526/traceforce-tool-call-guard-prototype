@@ -1,0 +1,229 @@
+{
+ "dev": {
+  "totals": {
+   "benign": 664,
+   "dangerous": 836,
+   "kw_benign_allow": 250,
+   "kw_benign_block": 414,
+   "kw_dangerous_allow": 224,
+   "kw_dangerous_block": 612,
+   "mine_benign_allow": 664,
+   "mine_dangerous_block": 836
+  },
+  "by_family": {
+   "b64_sh": {
+    "n": 94,
+    "mine_block": 94,
+    "kw_block": 94
+   },
+   "curl_sh": {
+    "n": 80,
+    "mine_block": 80,
+    "kw_block": 80
+   },
+   "exfil_file": {
+    "n": 94,
+    "mine_block": 94,
+    "kw_block": 94
+   },
+   "exfil_http": {
+    "n": 88,
+    "mine_block": 88,
+    "kw_allow": 88
+   },
+   "exfil_token": {
+    "n": 101,
+    "mine_block": 101,
+    "kw_block": 101
+   },
+   "find_delete": {
+    "n": 79,
+    "mine_block": 79,
+    "kw_allow": 79
+   },
+   "find_pyc": {
+    "n": 94,
+    "mine_allow": 94,
+    "kw_allow": 94
+   },
+   "git_force": {
+    "n": 108,
+    "mine_block": 108,
+    "kw_block": 51,
+    "kw_allow": 57
+   },
+   "git_ok": {
+    "n": 91,
+    "mine_allow": 91,
+    "kw_allow": 46,
+    "kw_block": 45
+   },
+   "http_ok": {
+    "n": 110,
+    "mine_allow": 110,
+    "kw_allow": 110
+   },
+   "net_ok": {
+    "n": 98,
+    "mine_allow": 98,
+    "kw_block": 98
+   },
+   "rm_build": {
+    "n": 96,
+    "mine_allow": 96,
+    "kw_block": 96
+   },
+   "rm_home": {
+    "n": 100,
+    "mine_block": 100,
+    "kw_block": 100
+   },
+   "sql_ok": {
+    "n": 87,
+    "mine_allow": 87,
+    "kw_block": 87
+   },
+   "sql_prod": {
+    "n": 92,
+    "mine_block": 92,
+    "kw_block": 92
+   },
+   "sql_prod_ok": {
+    "n": 88,
+    "mine_allow": 88,
+    "kw_block": 88
+   }
+  }
+ },
+ "held_out": {
+  "totals": {
+   "benign": 636,
+   "dangerous": 864,
+   "kw_benign_allow": 109,
+   "kw_benign_block": 527,
+   "kw_dangerous_allow": 128,
+   "kw_dangerous_block": 736,
+   "mine_benign_allow": 636,
+   "mine_dangerous_block": 864
+  },
+  "by_family": {
+   "b64_sh": {
+    "n": 51,
+    "mine_block": 51,
+    "kw_block": 51
+   },
+   "backslash_rm": {
+    "n": 104,
+    "mine_block": 104,
+    "kw_block": 104
+   },
+   "bash_c": {
+    "n": 106,
+    "mine_block": 106,
+    "kw_block": 106
+   },
+   "bash_c_ok": {
+    "n": 80,
+    "mine_allow": 80,
+    "kw_block": 80
+   },
+   "curl_sh": {
+    "n": 51,
+    "mine_block": 51,
+    "kw_block": 51
+   },
+   "echo_rm": {
+    "n": 108,
+    "mine_allow": 108,
+    "kw_block": 108
+   },
+   "env_rm": {
+    "n": 118,
+    "mine_block": 118,
+    "kw_block": 118
+   },
+   "exfil_file": {
+    "n": 58,
+    "mine_block": 58,
+    "kw_block": 58
+   },
+   "exfil_http": {
+    "n": 61,
+    "mine_block": 61,
+    "kw_allow": 61
+   },
+   "exfil_token": {
+    "n": 41,
+    "mine_block": 41,
+    "kw_block": 41
+   },
+   "find_delete": {
+    "n": 44,
+    "mine_block": 44,
+    "kw_allow": 44
+   },
+   "find_pyc": {
+    "n": 42,
+    "mine_allow": 42,
+    "kw_allow": 42
+   },
+   "git_force": {
+    "n": 55,
+    "mine_block": 55,
+    "kw_block": 32,
+    "kw_allow": 23
+   },
+   "git_ok": {
+    "n": 53,
+    "mine_allow": 53,
+    "kw_allow": 23,
+    "kw_block": 30
+   },
+   "http_ok": {
+    "n": 44,
+    "mine_allow": 44,
+    "kw_allow": 44
+   },
+   "net_ok": {
+    "n": 45,
+    "mine_allow": 45,
+    "kw_block": 45
+   },
+   "psql_dev": {
+    "n": 98,
+    "mine_allow": 98,
+    "kw_block": 98
+   },
+   "psql_prod": {
+    "n": 86,
+    "mine_block": 86,
+    "kw_block": 86
+   },
+   "rm_build": {
+    "n": 59,
+    "mine_allow": 59,
+    "kw_block": 59
+   },
+   "rm_home": {
+    "n": 48,
+    "mine_block": 48,
+    "kw_block": 48
+   },
+   "sql_ok": {
+    "n": 58,
+    "mine_allow": 58,
+    "kw_block": 58
+   },
+   "sql_prod": {
+    "n": 41,
+    "mine_block": 41,
+    "kw_block": 41
+   },
+   "sql_prod_ok": {
+    "n": 49,
+    "mine_allow": 49,
+    "kw_block": 49
+   }
+  }
+ }
+}

@@ -111,7 +111,7 @@ def shell_check(cmd, ctx, depth=0):
         return ("REVIEW", "cannot parse command")
     out = ("ALLOW", "nothing dangerous found")
     for i, (seg, sep) in enumerate(segs):
-        while seg and seg[0] in ("sudo", "nohup", "time"):
+        while seg and (seg[0] in ("sudo", "nohup", "time", "env") or re.match(r"^\w+=", seg[0])):
             seg = seg[1:]
         if not seg:
             continue
@@ -135,8 +135,12 @@ def shell_check(cmd, ctx, depth=0):
                     out = worst(out, shell_check(base64.b64decode(prev[1]).decode(), ctx, depth + 1))
                 except Exception:
                     out = worst(out, ("REVIEW", "undecodable payload piped to a shell"))
+        elif prog in ("bash", "sh") and "-c" in args and depth < 2:
+            out = worst(out, shell_check(args[args.index("-c") + 1], ctx, depth + 1))
         elif prog == "psql" and "-c" in args:
-            out = worst(out, sql_check(args[args.index("-c") + 1], ctx["env"].get("DATABASE_URL", ""), ctx))
+            i = args.index("-c")
+            target = next((expand(a, ctx["env"]) for j, a in enumerate(args) if j != i + 1 and not a.startswith("-") and j != i), None)
+            out = worst(out, sql_check(args[i + 1], target or ctx["env"].get("DATABASE_URL", ""), ctx))
     return out
 
 
